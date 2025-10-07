@@ -1,0 +1,12 @@
+ul.tree,
+ul.tree ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 1rem;
+}
+.tree li {
+  margin: 4px 0;
+}
+.node {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}

@@ -1,0 +1,16 @@
+<div class="tree-container">
+  <ul class="tree">
+    <ng-container *ngTemplateOutlet="nodeTemplate; context: {$implicit: root(), depth: 0}"></ng-container>
+  </ul>
+</div>
+
+<ng-template #nodeTemplate let-nodeId let-depth="depth">
+  <li>
+    <span class="node">{{ depth > 0 ? '- ' : '' }}{{ nodeId }}</span>
+    <ul *ngIf="getChildrenOf(nodeId).length > 0">
+      <ng-container *ngFor="let childId of getChildrenOf(nodeId)">
+        <ng-container *ngTemplateOutlet="nodeTemplate; context: {$implicit: childId, depth: depth + 1}"></ng-container>
+      </ng-container>
+    </ul>
+  </li>
+</ng-template>
